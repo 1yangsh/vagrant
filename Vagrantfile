@@ -28,6 +28,7 @@ Vagrant.configure("2") do |config|
     cfg.vm.network "private_network", ip: "192.168.56.12"
     cfg.vm.network "forwarded_port", guest: 22, host: 19212, auto_correct: false, id: "ssh"
     cfg.vm.network "forwarded_port", guest: 8080, host: 28080
+    cfg.vm.network "forwarded_port", guest: 30234, host: 30234 
     cfg.vm.provision "shell", path: "bash_ssh_conf_4_CentOS.sh"
   end
 
@@ -45,6 +46,6 @@ Vagrant.configure("2") do |config|
     cfg.vm.network "forwarded_port", guest: 22, host: 19214, auto_correct: false, id: "ssh"
     cfg.vm.network "forwarded_port", guest: 8080, host: 48080
     cfg.vm.network "forwarded_port", guest: 8001, host: 48001
-    cfg.vm.network "forwarded_port", guest: 32663, host: 60000 
+    
   end
 end
